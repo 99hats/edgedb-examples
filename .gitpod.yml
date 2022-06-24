@@ -1,10 +1,10 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo "init"
-    command: |
+  - init: |
       curl https://packages.edgedb.com/keys/edgedb.asc  | sudo apt-key add -
       echo deb https://packages.edgedb.com/apt $(lsb_release -cs) main | sudo tee /etc/apt/sources.list.d/edgedb.list
       sudo apt-get update && sudo apt-get install edgedb-1 -y
+    command: |
       cd flask-crud && \
       python -m venv myvenv && \
       source myvenv/bin/activate && \

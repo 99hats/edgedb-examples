@@ -2,7 +2,11 @@
 tasks:
   - init: |
       curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
-    command: python -m pip install -r requirements.txt
+    command: |
+      cd flask-crud && \
+      python -m venv myvenv && \
+      source myvenv/bin/activate && \
+      python -m pip install -r requirements.txt
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 3000

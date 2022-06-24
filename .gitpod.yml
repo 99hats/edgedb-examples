@@ -1,8 +1,8 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: |
-      curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
+  - init: echo "init"
     command: |
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.edgedb.com | sh
       cd flask-crud && \
       python -m venv myvenv && \
       source myvenv/bin/activate && \
